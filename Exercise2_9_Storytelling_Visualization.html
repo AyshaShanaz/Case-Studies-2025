@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2.9 - Storytelling and Data Visualizations - Aysha Samsudeen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        .main-content {
+            background: white;
+            margin: 2rem 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .content-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .content-header h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Tableau Container */
+        .tableau-container {
+            padding: 2rem;
+            background: #f8f9ff;
+        }
+
+        .tableau-embed {
+            width: 100%;
+            height: 800px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Insights Section */
+        .insights {
+            padding: 2rem;
+            background: white;
+        }
+
+        .insights h3 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .insight-card {
+            background: #f8f9ff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .insight-card h4 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .insight-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #764ba2;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .tableau-embed {
+                height: 600px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            color: #667eea;
+            font-size: 1.2rem;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin-right: 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">Aysha Samsudeen</div>
+                <ul class="nav-links">
+                    <li><a href="portfolio_home.html">Portfolio</a></li>
+                    <li><a href="Citibike_Enhanced_Case_Study.html">Citibike Analysis</a></li>
+                    <li><a href="Cacao_Analysis_Portfolio.html">Cacao Analysis</a></li>
+                    <li><a href="https://github.com/ayshashanaz" target="_blank">GitHub</a></li>
+                    <li><a href="https://public.tableau.com/app/profile/aysha.samsudeen" target="_blank">Tableau</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h1>📊 Exercise 2.9</h1>
+            <p>Storytelling and Data Visualizations - Interactive Tableau Story</p>
+        </section>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h2>Data Storytelling Visualization</h2>
+                <p>An interactive Tableau story demonstrating advanced data visualization techniques and narrative storytelling through data</p>
+            </div>
+
+            <div class="tableau-container">
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    Loading Tableau Visualization...
+                </div>
+                <div class='tableauPlaceholder' id='viz1703123456789' style='position: relative; display: none;'>
+                    <noscript>
+                        <a href='#'>
+                            <img alt='Story 1' src='https://public.tableau.com/static/images/Ex/Exercise2_9-StorytellingandDataVisualisations/Story1/1_rss.png' style='border: none' />
+                        </a>
+                    </noscript>
+                    <object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='Exercise2_9-StorytellingandDataVisualisations/Story1' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https://public.tableau.com/static/images/Ex/Exercise2_9-StorytellingandDataVisualisations/Story1/1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='language' value='en-US' />
+                    </object>
+                </div>
+                <script type='text/javascript'>
+                    var divElement = document.getElementById('viz1703123456789');
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+                    if (divElement.offsetWidth > 800) {
+                        vizElement.style.width = '100%';
+                        vizElement.style.height = '827px';
+                    } else if (divElement.offsetWidth > 500) {
+                        vizElement.style.width = '100%';
+                        vizElement.style.height = '827px';
+                    } else {
+                        vizElement.style.width = '100%';
+                        vizElement.style.height = '777px';
+                    }
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                    scriptElement.onload = function() {
+                        document.getElementById('loading').style.display = 'none';
+                        document.getElementById('viz1703123456789').style.display = 'block';
+                    };
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                </script>
+            </div>
+
+            <div class="insights">
+                <h3>Key Features & Insights</h3>
+                <div class="insights-grid">
+                    <div class="insight-card">
+                        <h4>📈 Interactive Storytelling</h4>
+                        <p>Demonstrates advanced Tableau storytelling capabilities with interactive elements that guide viewers through data narratives.</p>
+                    </div>
+                    <div class="insight-card">
+                        <h4>🎨 Visual Design</h4>
+                        <p>Showcases professional data visualization design principles with consistent color schemes and intuitive layouts.</p>
+                    </div>
+                    <div class="insight-card">
+                        <h4>📊 Data Analysis</h4>
+                        <p>Presents complex data insights through clear, actionable visualizations that support decision-making processes.</p>
+                    </div>
+                    <div class="insight-card">
+                        <h4>🔍 User Experience</h4>
+                        <p>Optimized for user engagement with responsive design and interactive filtering capabilities.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2024 Aysha Samsudeen | Data Analytics Portfolio</p>
+                <div class="footer-links">
+                    <a href="portfolio_home.html">Portfolio</a>
+                    <a href="https://github.com/ayshashanaz" target="_blank">GitHub</a>
+                    <a href="https://public.tableau.com/app/profile/aysha.samsudeen" target="_blank">Tableau Public</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
