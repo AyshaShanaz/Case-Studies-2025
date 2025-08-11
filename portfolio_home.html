@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aysha Samsudeen - Data Analytics Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .portfolio-header {
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .portfolio-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .portfolio-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .project-card h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .project-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .tech-stack {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: #f0f2ff;
+            color: #667eea;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 3rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-header h1 {
+                font-size: 2rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="portfolio-header">
+            <h1>Aysha Samsudeen</h1>
+            <p>Data Analytics Portfolio</p>
+        </header>
+
+        <main class="projects-grid">
+            <div class="project-card">
+                <h2>🚴‍♀️ Citibike 2022 Analysis</h2>
+                <p>Comprehensive analysis of NYC Citibike usage patterns, including temporal trends, station popularity, and user behavior insights using Python, Pandas, and interactive visualizations.</p>
+                <a href="Citibike_Enhanced_Case_Study.html" class="project-link">View Analysis</a>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Pandas</span>
+                    <span class="tech-tag">Matplotlib</span>
+                    <span class="tech-tag">Seaborn</span>
+                    <span class="tech-tag">Jupyter</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h2>🍫 Flavours of Cacao Analysis</h2>
+                <p>Interactive Tableau dashboard exploring global chocolate ratings, origins, and flavor profiles. Analyzing premium cacao data to uncover quality patterns and regional characteristics.</p>
+                <a href="Cacao_Analysis_Portfolio.html" class="project-link">View Dashboard</a>
+                <div class="tech-stack">
+                    <span class="tech-tag">Tableau</span>
+                    <span class="tech-tag">Data Visualization</span>
+                    <span class="tech-tag">Statistical Analysis</span>
+                    <span class="tech-tag">Geographic Mapping</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h2>📊 Exercise 2.9 - Data Storytelling</h2>
+                <p>Advanced Tableau storytelling visualization demonstrating narrative techniques through data. Interactive story format showcasing professional data visualization and user experience design.</p>
+                <a href="Exercise2_9_Storytelling_Visualization.html" class="project-link">View Story</a>
+                <div class="tech-stack">
+                    <span class="tech-tag">Tableau</span>
+                    <span class="tech-tag">Data Storytelling</span>
+                    <span class="tech-tag">Interactive Design</span>
+                    <span class="tech-tag">UX/UI</span>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Aysha Samsudeen | Data Analytics Portfolio</p>
+            <p>
+                <a href="https://github.com/ayshashanaz" target="_blank" style="color: white; margin: 0 1rem;">GitHub</a>
+                <a href="https://public.tableau.com/app/profile/aysha.samsudeen" target="_blank" style="color: white; margin: 0 1rem;">Tableau Public</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

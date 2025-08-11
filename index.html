@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aysha Samsudeen - Case Study Dashboard</title>
+  <style>
+    :root { --bg: #0f172a; --card: #111827; --text: #e5e7eb; --muted: #9ca3af; --accent: #3b82f6; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: var(--bg); color: var(--text); }
+    header { padding: 28px 18px; text-align: center; border-bottom: 1px solid #1f2937; }
+    header h1 { margin: 0; font-size: 28px; }
+    header p { margin: 8px 0 0 0; color: var(--muted); font-size: 14px; }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 24px 16px 60px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+    .card { background: linear-gradient(180deg, #0b1220, #0b1220 60%, #0a0f1a); border: 1px solid #1f2937; border-radius: 14px; padding: 18px; box-shadow: 0 10px 30px rgba(0,0,0,0.35); display: flex; flex-direction: column; }
+    .card h3 { margin: 0 0 8px 0; font-size: 18px; color: #f8fafc; }
+    .card p { margin: 0 0 14px 0; color: var(--muted); font-size: 14px; min-height: 42px; }
+    .pill { display: inline-block; padding: 6px 10px; background: #0b2a55; border: 1px solid #183b6b; color: #dbeafe; border-radius: 999px; font-size: 12px; margin-right: 6px; }
+    .actions { margin-top: auto; display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn { flex: 1; text-align: center; text-decoration: none; color: white; background: #1f2937; border: 1px solid #334155; padding: 10px 12px; border-radius: 10px; transition: 0.15s; font-weight: 600; }
+    .btn.primary { background: var(--accent); border-color: #2563eb; }
+    .btn:hover { transform: translateY(-1px); filter: brightness(1.05); }
+    footer { text-align: center; color: var(--muted); font-size: 12px; padding: 26px 10px; border-top: 1px solid #1f2937; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Aysha Samsudeen — Case Study Dashboard</h1>
+    <p>Explore my data portfolio: urban mobility, storytelling visuals, and cacao analysis</p>
+  </header>
+  <div class="wrap">
+    <div class="grid">
+
+      <div class="card">
+        <div>
+          <span class="pill">Case Study</span>
+          <span class="pill">Citibike</span>
+        </div>
+        <h3>Citibike 2022: Urban Mobility Analysis</h3>
+        <p>Behavioral patterns, demand cycles, and actionable insights to optimize bike share operations.</p>
+        <div class="actions">
+          <a class="btn primary" href="Citibike_Enhanced_Case_Study.html">Open</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <span class="pill">Case Study</span>
+          <span class="pill">Cacao</span>
+        </div>
+        <h3>Flavours of Cacao Analysis</h3>
+        <p>Exploring chocolate ratings, origins, and tasting notes to uncover flavor profiles.</p>
+        <div class="actions">
+          <a class="btn primary" href="Cacao_Analysis_Portfolio.html">Open</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <span class="pill">Visualizations</span>
+          <span class="pill">Storytelling</span>
+        </div>
+        <h3>Exercise 2.9 — Storytelling Visualizations</h3>
+        <p>A curated set of visuals demonstrating narrative-driven data insights and design principles.</p>
+        <div class="actions">
+          <a class="btn primary" href="Exercise2_9_Storytelling_Visualization.html">Open</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <span class="pill">Home</span>
+          <span class="pill">Portfolio</span>
+        </div>
+        <h3>Portfolio Home</h3>
+        <p>Landing page with links to all projects and case studies.</p>
+        <div class="actions">
+          <a class="btn" href="portfolio_home.html">Open</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <footer>
+    Hosted on GitHub Pages — make sure this index.html is in the published folder (root or /docs)
+  </footer>
+</body>
+</html>
